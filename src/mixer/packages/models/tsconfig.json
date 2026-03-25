@@ -1,0 +1,15 @@
+{
+  "extends": "@websolutespa/tsconfig/tsnode.json",
+  "include": [
+    "."
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "."
+  }
+}

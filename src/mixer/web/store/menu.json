@@ -1,0 +1,52 @@
+[
+  {
+    "id": "main",
+    "items": [
+      {
+        "type": "page",
+        "page": {
+          "relationTo": "homepage",
+          "value": 1
+        }
+      },
+      {
+        "type": "category",
+        "category": "parent-category"
+      },
+      {
+        "type": "category",
+        "category": "other-category"
+      },
+      {
+        "type": "category",
+        "category": "test"
+      },
+      {
+        "type": "page",
+        "page": {
+          "relationTo": "post_index",
+          "value": 1
+        }
+      },
+      {
+        "type": "page",
+        "page": {
+          "relationTo": "post_index",
+          "value": 2
+        }
+      },
+      {
+        "type": "group",
+        "title": "Group",
+        "items": [
+          {
+            "type": "link",
+            "title": "Link",
+            "href": "https://www.websolute.com",
+            "target": "_blank"
+          }
+        ]
+      }
+    ]
+  }
+]

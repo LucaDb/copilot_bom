@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { Colors } from '@websolutespa/bom-mixer-ui';
+
+<Meta
+  title="Colors"
+  decorators={[(story) => (
+    <div style={ { padding: '0' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{
+    backgrounds: { disable: true, grid: { disable: true } },
+  }}
+/>
+
+# Colors
+
+<Canvas>
+  <Story name="Colors">
+    <Colors />
+  </Story>
+</Canvas>

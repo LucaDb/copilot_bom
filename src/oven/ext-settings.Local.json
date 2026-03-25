@@ -1,0 +1,74 @@
+{
+  "$schema": "https://raw.githubusercontent.com/websolutespa/bom/main/src/oven/modules/json-schema.json",
+  "extConfig": {
+    "folder": "Extensions",
+    "enableShutDownOnChange": false,
+    "assemblies": {
+      "Websolute.BOM.Oven.Extensions.Gateway": {
+        "priority": 95,
+        "options": {
+          "mapWhen": "/media",
+          "ocelot": {
+            "routes": [
+              {
+                "upstreamPathTemplate": "/media/{everything}",
+                "downstreamPathTemplate": "/media/{everything}",
+                "downstreamScheme": "http",
+                "downstreamHostAndPorts": [
+                  {
+                    "host": "localhost",
+                    "port": 4000
+                  }
+                ]
+              }
+            ],
+            "HttpHandlerOptions": {
+              "UseTracing": true
+            }
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Cors": {
+        "priority": 200,
+        "options": {
+          "policies": [
+            {
+              "name": "pAllowAnyVerb",
+              "allowCredentials": true,
+              "origins": [
+                "http://localhost:3000"
+              ]
+            }
+          ]
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Bowl.PayloadCms.Search": {
+        "priority": 350,
+        "options": {
+          "host": "http://localhost:4000/bowl",
+          "authentication": {
+            "method": "Credentials",
+            "userName": "admin@bowl-payload.com",
+            "password": "admin"
+          },
+          "api": {
+            "enabled": true,
+            "path": "/api/bowl"
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Diagnostic": {
+        "priority": 999,
+        "options": {
+          "httpLogging": {
+            "enable": true,
+            "config": {
+              "loggingFields": "All"
+            }
+          }
+        }
+      }
+    },
+    "injectors": []
+  }
+}

@@ -1,0 +1,11 @@
+.cache
+.mixer
+.next
+.swc
+.mock
+.build
+.dist
+dist
+build
+public/*
+!public/.gitkeep

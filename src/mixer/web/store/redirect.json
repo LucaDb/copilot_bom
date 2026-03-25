@@ -1,0 +1,10 @@
+[
+  {
+    "status": "307",
+    "from": "*/docs/document.pdf",
+    "to": "*/redirect.pdf",
+    "name": "staticFiles",
+    "order": 10,
+    "isActive": true
+  }
+]

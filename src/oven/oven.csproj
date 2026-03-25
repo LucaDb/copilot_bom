@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Websolute.BOM.Oven.Web</RootNamespace>
+    <AssemblyName>Websolute.BOM.Oven.Web</AssemblyName>
+    <IsPackable>false</IsPackable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1591;1701;1702</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <UserSecretsId>08743038-e9f6-4db5-b5b5-46819d8ed445</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Websolute.BOM.Oven.Core.App" Version="8.0.1" />
+    <PackageReference Include="Websolute.BOM.Oven.Extensions.Bowl.PayloadCms" Version="8.0.11" />
+    <PackageReference Include="Websolute.BOM.Oven.Extensions.Cors" Version="8.0.3" />
+    <PackageReference Include="Websolute.BOM.Oven.Extensions.Gateway" Version="8.0.1" />
+    <PackageReference Include="Websolute.BOM.Oven.Extensions.GDPR.Iubenda" Version="8.0.5" />
+    <PackageReference Include="Websolute.BOM.Oven.Extensions.Scheduler.Hangfire" Version="8.0.2" />
+    <PackageReference Include="Websolute.BOM.Oven.Extensions.StaticFiles" Version="8.0.1" />
+  </ItemGroup>
+
+</Project>

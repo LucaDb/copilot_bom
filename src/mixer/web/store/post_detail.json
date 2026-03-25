@@ -1,0 +1,77 @@
+[
+  {
+    "category": "post_index",
+    "template": "post_detail",
+    "title": "Lobortis pharetra taciti vestibulum",
+    "abstract": "Cubilia morbi morbi conubia vivamus dictum. Maecenas luctus etiam morbi senectus tortor.",
+    "description": "<p>Litora sem mollis elementum, metus consequat ornare in est. Nulla facilisis duis lectus blandit ipsum imperdiet.</p><p>Ridiculus eget dapibus fusce cras porta. Consectetur tempor mauris parturient vehicula imperdiet facilisis. Quisque imperdiet augue imperdiet viverra integer.</p><p>Conubia porttitor lorem consectetur ornare a velit. Nisi sapien interdum tortor venenatis risus. Porttitor leo neque mattis ante tempus eros congue vivamus.</p>",
+    "media": {
+      "type": "image",
+      "src": "https://placehold.co/960x540/e4e5eb/f4f5fb.webp?text=placehold",
+      "alt": "Detailed description of the picture"
+    },
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce",
+    "abstract": "Consectetur malesuada habitasse mattis diam varius. Aptent conubia proin, dictum dolor ex cursus.",
+    "description": "<p>Etiam ultricies arcu turpis facilisis laoreet tellus sollicitudin senectus. Enim gravida donec conubia nullam amet proin molestie. Eleifend urna nostra ac diam nascetur aptent nibh.</p><p>Nulla posuere molestie praesent dolor lectus. Tellus lorem erat purus auctor consequat orci primis. Duis tempus leo, amet at velit morbi.</p><p>Nam ridiculus fames felis elit ipsum. Etiam justo taciti netus at arcu.</p>",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 3",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 4",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 5",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 6",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 7",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 8",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 9",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 10",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 11",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 12",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 13",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 14",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 15",
+    "$inherit": true
+  },
+  {
+    "title": "Sollicitudin felis maximus fusce 16",
+    "$inherit": true
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "name": "@copilot_bom/models",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Mixer Models module of the BOM Repository",
+  "keywords": [
+    "bom",
+    "mixer",
+    "models"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/websolutespa/bom.git"
+  },
+  "scripts": {
+    "lint": "eslint *.ts*",
+    "compile": "tsup ./src/index.ts --format esm,cjs --dts --external react",
+    "prepack": "bom prepack",
+    "postpack": "bom postpack"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@websolutespa/bom-core": "*",
+    "@websolutespa/bom-mixer-models": "*",
+    "@websolutespa/bom-mixer-store": "*"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.24",
+    "@types/react": "^18.2.75",
+    "@websolutespa/bom-cli": "*",
+    "@websolutespa/test": "*",
+    "@websolutespa/tsconfig": "*",
+    "eslint-config-websolute": "*",
+    "eslint": "^8.56.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^6.7.0",
+    "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "prepack": {
+    "types": "./dist/index.d.ts",
+    "main": "./dist/index.mjs",
+    "module": "./dist/index.mjs",
+    "source": "./src/index.ts"
+  },
+  "postpack": {
+    "types": "./src/index.ts",
+    "main": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "main": "./src/index.ts"
+}

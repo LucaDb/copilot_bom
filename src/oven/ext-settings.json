@@ -1,0 +1,403 @@
+{
+  "$schema": "https://raw.githubusercontent.com/websolutespa/bom/main/src/oven/modules/json-schema.json",
+  "extConfig": {
+    "folder": "Extensions",
+    "enableShutDownOnChange": false,
+    "assemblies": {
+      "Websolute.BOM.Oven.Extensions.Gateway": {
+        "priority": 95,
+        "options": {
+          "mapWhen": "/media",
+          "ocelot": {
+            "routes": [
+              {
+                "upstreamPathTemplate": "/media/{everything}",
+                "downstreamPathTemplate": "/media/{everything}",
+                "downstreamScheme": "http",
+                "downstreamHostAndPorts": [
+                  {
+                    "host": "bowl",
+                    "port": 4000
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.StaticFiles": {
+        "priority": 100,
+        "options": {
+          "paths": [
+            {}
+          ]
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Cors": {
+        "priority": 200,
+        "options": {
+          "policies": [
+            {
+              "name": "pAllowAnyVerb",
+              "allowCredentials": true,
+              "origins": [
+                "http://mixer:3000",
+                "http://localhost:3000",
+                "http://localhost"
+              ]
+            }
+          ]
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Api": {
+        "priority": 300,
+        "options": {
+          "serialization": {
+            "nullValueHandling": "Ignore",
+            "formatting": "Indented",
+            "referenceLoopHandling": "Ignore",
+            "converters": [
+              {
+                "assembly": "Websolute.BOM.Oven.Extensions.Api",
+                "type": "Websolute.BOM.Oven.Shared.Serialization.ExceptionConverter"
+              }
+            ]
+          },
+          "documentation": {
+            "routePrefix": "/swagger",
+            "securityDefinitions": {
+              "bearer": true,
+              "cookies": [
+                ".auth.api.Cookie"
+              ]
+            },
+            "ui": {
+              "injectCss": "/swagger-ui/custom.css",
+              "injectJs": "/swagger-ui/custom.js"
+            },
+            "endpoints": [
+              {
+                "id": "public",
+                "title": "public api",
+                "version": "v1"
+              },
+              {
+                "id": "admin"
+              }
+            ],
+            "xmlComments": {
+              "fileName": "Websolute.BOM.Oven.Web.xml",
+              "includeControllerComments": true
+            }
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Data.Cache": {
+        "priority": 300,
+        "options": {
+          "entryExpirationInMinutes": {
+            "fast": 1,
+            "medium": 5,
+            "slow": 60,
+            "never": 1440
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.GDPR.Iubenda": {
+        "priority": 400,
+        "options": {
+          "iubenda": {
+            "iubendaKey": "X8MqOlNZq9UisQGBhED00Ti9FiaHp59B",
+            "check": {
+              "limit": 30,
+              "maxDays": 7
+            }
+          },
+          "api": {
+            "apiKey": "e1a9e1e9-b306-4d26-8921-9b4c2253a7ed",
+            "httpReferrers": [
+              "http://localhost:4000",
+              "http://localhost:4000/bowl",
+              "https://localhost:4000",
+              "https://localhost:4000/bowl"
+            ],
+            "enabled": true,
+            "path": "/api/gdpr"
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Bowl.PayloadCms": {
+        "priority": 350,
+        "options": {
+          "host": "http://bowl:4000/bowl",
+          "authSlug": "users",
+          "authentication": {
+            "method": "ApiKey",
+            "apiKey": ""
+          },
+          "slugs": {
+            "category": "category",
+            "market": "market",
+            "locale": "locale",
+            "excludeFromStore": [
+              "media",
+              "page"
+            ]
+          },
+          "api": {
+            "enabled": true,
+            "path": "/api/bowl"
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.HealthCheck": {
+        "priority": 999,
+        "options": {
+          "routes": [
+            {
+              "path": "/healthz",
+              "contentType": "text",
+              "skipChecks": true
+            },
+            {
+              "path": "/healthz/checks",
+              "contentType": "json",
+              "skipChecks": false,
+              "_authHosts": [
+                "localhost:32040"
+              ]
+            }
+          ],
+          "checks": {
+            "_storage": [
+              {
+                "driver": "C:\\",
+                "minimumFreeMb": 2048,
+                "status": "Degraded",
+                "name": "diskC",
+                "tags": [
+                  "infrastructure",
+                  "on-premises"
+                ]
+              }
+            ],
+            "memory": {
+              "maximumAllocatedMb": 500,
+              "status": "Degraded",
+              "tags": [
+                "infrastructure",
+                "on-premises"
+              ]
+            },
+            "_process": [
+              {
+                "processName": "devenv",
+                "name": "devenv",
+                "status": "Degraded",
+                "tags": [
+                  "infrastructure",
+                  "on-premises"
+                ]
+              }
+            ],
+            "_tcp": [
+              {
+                "host": "127.0.0.1",
+                "port": 2025,
+                "name": "mailserver",
+                "tags": [
+                  "infrastructure",
+                  "local",
+                  "smtp"
+                ]
+              },
+              {
+                "host": "127.0.0.1",
+                "port": 27017,
+                "name": "mongo",
+                "tags": [
+                  "infrastructure",
+                  "local",
+                  "db"
+                ]
+              }
+            ],
+            "http": [
+              {
+                "url": "https://www.google.com",
+                "name": "outbound",
+                "status": "Unhealthy",
+                "tags": [
+                  "network",
+                  "firewall"
+                ]
+              }
+            ],
+            "appLog": {
+              "_appLogService": "x.core.HealthCheckAppLogService, x.core",
+              "takeLastLog": {
+                "criteria": "Top",
+                "value": 1000
+              },
+              "_logIgnoreRoles": [
+                {
+                  "level": "Warn",
+                  "selectors": [
+                    {
+                      "logger": {
+                        "list": [
+                          "MyProject2.Hub.Controllers.PrenotingController"
+                        ]
+                      }
+                    },
+                    {
+                      "logger": {
+                        "list": [
+                          "MyProject1",
+                          "MyProject2"
+                        ],
+                        "role": "StartWith"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "level": "Error",
+                  "selectors": [
+                    {
+                      "logger": {
+                        "list": [
+                          "Aves.Booking.RatePlan",
+                          "MyProject1.Server.Extensions.ImageSharpExtension",
+                          "SixLabors.ImageSharp.Web.Middleware.ImageSharpMidd"
+                        ],
+                        "role": "EqualTo"
+                      }
+                    },
+                    {
+                      "logger": {
+                        "list": [
+                          "NodeServices"
+                        ],
+                        "role": "Contains"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "healthStatusCheckers": [
+                {
+                  "level": "Warn",
+                  "minCounters": [
+                    {
+                      "minEntry": 1000,
+                      "healthStatus": "Degraded"
+                    },
+                    {
+                      "minEntry": 10000,
+                      "healthStatus": "Unhealthy"
+                    }
+                  ]
+                },
+                {
+                  "level": "Error",
+                  "minCounters": [
+                    {
+                      "minEntry": 100,
+                      "healthStatus": "Degraded"
+                    },
+                    {
+                      "minEntry": 1000,
+                      "healthStatus": "Unhealthy"
+                    }
+                  ]
+                },
+                {
+                  "level": "Fatal",
+                  "minCounters": [
+                    {
+                      "minEntry": 10,
+                      "healthStatus": "Unhealthy"
+                    }
+                  ]
+                }
+              ],
+              "logMessageAggregate": {
+                "truncateLengthAt": 255,
+                "maxLevenshteinDistanceFactor": 90
+              },
+              "tags": [
+                "app"
+              ]
+            }
+          },
+          "ui": {
+            "enable": true,
+            "route": "/healthchecks-ui",
+            "injectCss": "wwwroot/healthcheck-ui/style.css",
+            "endpoints": [
+              {
+                "uri": "/healthz/checks",
+                "name": "web-app"
+              }
+            ],
+            "_webhooks": [
+              {
+                "name": "web-catcher",
+                "uri": "https://ws-bom-***.requestcatcher.com/healthz",
+                "payload": "{\"title\": \"The HealthCheck '[[LIVENESS]]' is failing\",\"text\": \"Error message: [[FAILURE]]. [[DESCRIPTIONS]]\",\"isFailure\": true}",
+                "restorePayload": "{\"title\": \"The HealthCheck '[[LIVENESS]]' is recovered\",\"text\": \"All is up and running\"}"
+              }
+            ],
+            "evaluationTimeInSeconds": 60,
+            "minimumSecondsBetweenFailureNotifications": 300
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Diagnostic": {
+        "priority": 999,
+        "options": {
+          "httpLogging": {
+            "enable": true,
+            "config": {
+              "loggingFields": "Request",
+              "requestBodyLogLimit": 4096,
+              "responseBodyLogLimit": 4096,
+              "requestHeaders": [
+                "Host",
+                "Referer",
+                "sec-ch-ua"
+              ],
+              "responseHeaders": [
+                "Cache-Control",
+                "Content-Encoding",
+                "Content-Type",
+                "Set-Cookie"
+              ]
+            },
+            "logRequestQuery": true
+          },
+          "profiler": {
+            "enable": true,
+            "config": {
+              "EnableDebugMode": true,
+              "ColorScheme": "Light"
+            }
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Scheduler.Hangfire": {
+        "priority": 500,
+        "options": {
+          "enable": true,
+          "hangfire": {
+            "dashboard": {
+              "path": "/hangfire"
+            }
+          }
+        }
+      }
+    },
+    "injectors": []
+  }
+}

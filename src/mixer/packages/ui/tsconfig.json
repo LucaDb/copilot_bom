@@ -1,0 +1,16 @@
+{
+  "extends": "@websolutespa/tsconfig/tsreact.json",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "."
+  }
+}

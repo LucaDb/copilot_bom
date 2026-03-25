@@ -1,0 +1,59 @@
+{
+  "name": "@copilot_bom/icons",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [
+    "bom",
+    "mixer",
+    "icons"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/websolutespa/bom.git"
+  },
+  "scripts": {
+    "dev": "bom icons ./svg watch",
+    "lint": "eslint *.ts*",
+    "compile:build": "bom icons ./svg",
+    "compile:compile": "bom compile",
+    "compile": "run-s compile:*",
+    "prepack": "bom prepack",
+    "postpack": "bom postpack"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">= 18.2.0"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.24",
+    "@types/react": "^18.2.75",
+    "@websolutespa/bom-cli": "*",
+    "@websolutespa/test": "*",
+    "@websolutespa/tsconfig": "*",
+    "eslint-config-websolute": "*",
+    "eslint": "^8.56.0",
+    "npm-run-all": "^4.1.5",
+    "raw-loader": "^4.0.2",
+    "svgo": "latest",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "prepack": {
+    "types": "./dist/types/index.d.ts",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js"
+  },
+  "postpack": {
+    "types": "./src/index.ts",
+    "main": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "main": "./src/index.ts"
+}

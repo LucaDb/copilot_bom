@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json.schemastore.org/appsettings.json",
+  "Logging": {
+    "NLog": {
+      "IncludeScopes": true
+    }
+  },
+  "NLog": {
+    "autoReload": true,
+    "throwConfigExceptions": true,
+    "internalLogLevel": "Info",
+    "internalLogFile": "${basedir}/logs/nlog-%COMPUTERNAME%-%ASPNETCORE_ENVIRONMENT%-internal.log",
+    "internalLogToConsole": true,
+    "internalLogToConsoleError": true,
+    "extensions": [
+      { "assembly": "NLog.Extensions.Logging" },
+      { "assembly": "NLog.Web.AspNetCore" }
+    ],
+    "time": {
+      "type": "AccurateLocal"
+    },
+    "default-wrapper": { "type": "AsyncWrapper" },
+    "targets": {
+      "async": true,
+      "console": {
+        "type": "Console"
+      },
+      "file": {
+        "type": "File",
+        "fileName": "${basedir}/logs/nlog-${hostname}-${environment:ASPNETCORE_ENVIRONMENT}-${shortdate}.log",
+        "maxArchiveDays": 60,
+        "layout": "${guid}|${hostname}|${logger}|${level}|${callsite:filename=true}|${message}|${message:raw=true}|${all-event-properties:separator=$$$}|${exception:tostring}|${longdate}"
+      },
+      "json": {
+        "type": "File",
+        "fileName": "${basedir}/logs/nlog-${hostname}-${environment:ASPNETCORE_ENVIRONMENT}-${shortdate}.json",
+        "maxArchiveDays": 60,
+        "layout": {
+          "type": "JsonLayout",
+          "Attributes": [
+            {
+              "name": "id",
+              "layout": "${guid}"
+            },
+            {
+              "name": "machineName",
+              "layout": "${hostname}"
+            },
+            {
+              "name": "logger",
+              "layout": "${logger}"
+            },
+            {
+              "name": "level",
+              "layout": "${level}"
+            },
+            {
+              "name": "callsite",
+              "layout": "${callsite:filename=true}"
+            },
+            {
+              "name": "message",
+              "layout": "${message}"
+            },
+            {
+              "name": "rawmessage",
+              "layout": "${message:raw=true}"
+            },
+            {
+              "name": "properties",
+              "encode": false,
+              "layout": {
+                "type": "JsonLayout",
+                "includeallproperties": "true"
+              }
+            },
+            {
+              "name": "exception",
+              "layout": "${exception:tostring}"
+            },
+            {
+              "name": "createdAt",
+              "layout": "${date:format=o}"
+            }
+          ]
+        }
+      },
+      "dashboard.nlog.memory": {
+        "type": "Memory",
+        "maxLogsCount": 1000,
+        "layout": {
+          "type": "JsonLayout",
+          "Attributes": [
+            {
+              "name": "id",
+              "layout": "${guid}"
+            },
+            {
+              "name": "machineName",
+              "layout": "${hostname}"
+            },
+            {
+              "name": "logger",
+              "layout": "${logger}"
+            },
+            {
+              "name": "level",
+              "layout": "${level}"
+            },
+            {
+              "name": "callsite",
+              "layout": "${callsite:filename=true}"
+            },
+            {
+              "name": "message",
+              "layout": "${message}"
+            },
+            {
+              "name": "rawmessage",
+              "layout": "${message:raw=true}"
+            },
+            {
+              "name": "properties",
+              "layout": "${all-event-properties:separator=$$$}"
+            },
+            {
+              "name": "exception",
+              "layout": "${exception:tostring}"
+            },
+            {
+              "name": "createdAt",
+              "layout": "${date:format=o}"
+            }
+          ]
+        }
+      }
+    },
+    "rules": {
+      "0": {
+        "logger": "Websolute.BOM.Oven.*",
+        "minLevel": "Info",
+        "writeTo": "console, file, json, dashboard.nlog.memory",
+        "final": true
+      },
+      "1": {
+        "logger": "Websolute.BOM.Oven.Core.Program",
+        "minLevel": "Info",
+        "writeTo": "console, file, json, dashboard.nlog.memory",
+        "final": true
+      },
+      "2": {
+        "logger": "Websolute.BOM.Oven.Core.*",
+        "minLevel": "Info",
+        "writeTo": "console, file, json, dashboard.nlog.memory",
+        "final": true
+      },
+      "3": {
+        "logger": "ExtCore.*",
+        "maxLevel": "Warn",
+        "final": true
+      },
+      "4": {
+        "logger": "Microsoft.Hosting.Lifetime",
+        "minLevel": "Info",
+        "writeTo": "console, file, json, dashboard.nlog.memory",
+        "final": true
+      },
+      "10": {
+        "logger": "Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware",
+        "minLevel": "Info",
+        "writeTo": "console",
+        "final": true
+      },
+      "11": {
+        "logger": "Microsoft.Extensions.Diagnostics.HealthChecks.*",
+        "final": true
+      },
+      "12": {
+        "logger": "HealthChecks.UI.Core.*",
+        "final": true
+      },
+      "20": {
+        "logger": "*",
+        "minLevel": "Warn",
+        "writeTo": "console, file, json, dashboard.nlog.memory"
+      }
+    }
+  }
+}

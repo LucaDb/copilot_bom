@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/websolutespa/bom/main/oven/src/modules/json-schema.json",
+  "extConfig": {
+    "folder": "Extensions",
+    "enableShutDownOnChange": false,
+    "assemblies": {
+      "Websolute.BOM.Oven.Extensions.HealthCheck": {
+        "priority": 999,
+        "options": {
+          "ui": {
+            "_webhooks": [
+              {
+                "name": "ms-teams",
+                "uri": "https://***.webhook.office.com/...",
+                "payload": "{\"@context\":\"http://schema.org/extensions\",\"@type\":\"MessageCard\",\"themeColor\":\"c62900\",\"title\":\"The HealthCheck '[[LIVENESS]]' is failing\",\"text\":\"[[FAILURE]]. [[DESCRIPTIONS]]\",\"potentialAction\":[{\"@type\":\"OpenUri\",\"name\":\"Healthz UI\",\"targets\":[{\"os\":\"default\",\"uri\":\"https://www.websolute.com/oven/healthchecks-ui\"}]}]}",
+                "restorePayload": "{\"@context\":\"http://schema.org/extensions\",\"@type\":\"MessageCard\",\"themeColor\":\"1fc600\",\"title\":\"The HealthCheck '[[LIVENESS]]' is recovered\",\"text\":\"All is up and running\",\"potentialAction\":[{\"@type\":\"OpenUri\",\"name\":\"Healthz UI\",\"targets\":[{\"os\":\"default\",\"uri\":\"https://www.websolute.com/oven/healthchecks-ui\"}]}]}"
+              }
+            ]
+          }
+        }
+      },
+      "Websolute.BOM.Oven.Extensions.Diagnostic": {
+        "priority": 999,
+        "options": {
+          "httpLogging": {
+            "enable": false
+          },
+          "profiler": {
+            "enable": false
+          }
+        }
+      }
+    },
+    "injectors": []
+  }
+}

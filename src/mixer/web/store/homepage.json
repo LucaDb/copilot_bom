@@ -1,0 +1,135 @@
+[
+  {
+    "category": "homepage",
+    "template": "homepage",
+    "isDefault": true,
+    "slug": "",
+    "title": "Mixer",
+    "abstract": "Next generation stack by Websolute",
+    "media": {
+      "src": "https://placehold.co/1920x1200/e4e5eb/f4f5fb.webp?text=placehold",
+      "type": "image"
+    },
+    "components": [
+      {
+        "schema": "text_description",
+        "description": {
+          "en": "<p>BOM application stack by Websolute to build static and dynamic websites and web applications</p><p>Our tools will help you build websites and applications that are not only beautiful and functional, but also static and dynamic.</p><p>We've integrated Next.js to streamline the web development process, allowing for seamless switching between static and dynamic pages.</p><p>And with Payload CMS, you can easily manage your content without any coding experience. This powerful combination results in websites and web applications that are fast, modern, and user-centric.</p>",
+          "it": "<p>Stack applicativo BOM di Websolute per la realizzazione di siti e applicazioni web statiche e dinamiche</p><p>I nostri strumenti ti aiuteranno a realizzare siti web e applicazioni non solo belli e funzionali, ma anche statici e dinamici.</p><p>Abbiamo integrato Next.js per semplificare il processo di sviluppo Web, consentendo il passaggio senza interruzioni tra pagine statiche e dinamiche.</p><p>E con Payload CMS, puoi gestire facilmente i tuoi contenuti senza alcuna esperienza di programmazione. Questa potente combinazione si traduce in siti Web e applicazioni Web veloci, moderni e incentrati sull'utente.</p>"
+        }
+      }
+    ],
+    "meta": {
+      "title": "Mixer",
+      "description": {
+        "en": "BOM application stack by Websolute to build static and dynamic websites and web applications",
+        "it": "Stack applicativo BOM di Websolute per la realizzazione di siti e applicazioni web statiche e dinamiche"
+      },
+      "keywords": "mixer keywords",
+      "robots": "all"
+    }
+  },
+  {
+    "category": "parent-category",
+    "title": {
+      "en": "Child of parent category",
+      "it": "Figlio di categoria padre"
+    },
+    "$inherit": true
+  },
+  {
+    "category": "sub-category",
+    "isDefault": true,
+    "title": {
+      "en": "Default of hidden sub category",
+      "it": "Predefinito di sotto categoria nascosta"
+    },
+    "$inherit": true
+  },
+  {
+    "category": "sub-category",
+    "title": {
+      "en": "Child of hidden sub category",
+      "it": "Figlio di sotto categoria nascosta"
+    },
+    "$inherit": true
+  },
+  {
+    "category": "other-category",
+    "isDefault": true,
+    "title": {
+      "en": "Default of other category",
+      "it": "Predefinito di altra categoria"
+    },
+    "$inherit": true
+  },
+  {
+    "category": "other-category",
+    "title": {
+      "en": "Child of other category",
+      "it": "Figlio di altra categoria"
+    },
+    "$inherit": true
+  },
+  {
+    "category": "child-of-hidden-category",
+    "title": {
+      "en": "Child of hidden Category",
+      "it": "Figlio di Categoria nascosta"
+    },
+    "isDefault": true,
+    "$inherit": true
+  },
+  {
+    "category": "child-of-hidden-child-of-hidden-category",
+    "title": {
+      "en": "Child of hidden Child of hidden Category",
+      "it": "Figlio di Figlio Nascosto di Categoria nascosta"
+    },
+    "isDefault": true,
+    "$inherit": true
+  },
+  {
+    "category": "test",
+    "isDefault": true,
+    "title": {
+      "en": "Test",
+      "it": "Test"
+    },
+    "components": [
+      {
+        "schema": "test_pagination",
+        "affectsMetaData": true
+      },
+      {
+        "schema": "test_pagination_infinite"
+      },
+      {
+        "schema": "image_loop_test"
+      },
+      {
+        "schema": "video_test"
+      },
+      {
+        "schema": "svg_test"
+      },
+      {
+        "schema": "contact_form"
+      }
+    ],
+    "$inherit": true
+  },
+  {
+    "category": "test",
+    "title": {
+      "en": "Form",
+      "it": "Form"
+    },
+    "components": [
+      {
+        "schema": "test_form"
+      }
+    ],
+    "$inherit": true
+  }
+]

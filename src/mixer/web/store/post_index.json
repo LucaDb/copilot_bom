@@ -1,0 +1,28 @@
+[
+  {
+    "category": "post_index",
+    "template": "post_index",
+    "title": "Posts paginated",
+    "abstract": "Id ad quam facilisi class consequat. Massa semper posuere odio odio.",
+    "description": "<p>Quam potenti diam porttitor conubia habitasse varius. Inceptos egestas eleifend erat varius consectetur consectetur ipsum. Consectetur semper penatibus curae nascetur nec eros vitae.</p><p>Nisi iaculis euismod felis erat quis conubia lectus duis. Non facilisis diam urna mollis nostra.</p><p>Lobortis ridiculus suscipit tempus habitasse consectetur. Ante inceptos vivamus dignissim hendrerit inceptos ut duis quis? Inceptos ex auctor accumsan purus natoque lorem malesuada natoque.</p>",
+    "media": {
+      "type": "image",
+      "src": "https://placehold.co/960x540/e4e5eb/f4f5fb.webp?text=placehold",
+      "alt": "Detailed description of the picture"
+    },
+    "useSplat": true
+  },
+  {
+    "category": "post_index",
+    "template": "post_index_infinite",
+    "title": "Posts infinite",
+    "abstract": "Id ad quam facilisi class consequat. Massa semper posuere odio odio.",
+    "description": "<p>Quam potenti diam porttitor conubia habitasse varius. Inceptos egestas eleifend erat varius consectetur consectetur ipsum. Consectetur semper penatibus curae nascetur nec eros vitae.</p><p>Nisi iaculis euismod felis erat quis conubia lectus duis. Non facilisis diam urna mollis nostra.</p><p>Lobortis ridiculus suscipit tempus habitasse consectetur. Ante inceptos vivamus dignissim hendrerit inceptos ut duis quis? Inceptos ex auctor accumsan purus natoque lorem malesuada natoque.</p>",
+    "media": {
+      "type": "image",
+      "src": "https://placehold.co/960x540/e4e5eb/f4f5fb.webp?text=placehold",
+      "alt": "Detailed description of the picture"
+    },
+    "useSplat": true
+  }
+]

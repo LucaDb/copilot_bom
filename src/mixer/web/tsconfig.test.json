@@ -1,0 +1,17 @@
+{
+  "extends": "@websolutespa/tsconfig/tsnext.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".mixer"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "jsx": "react-jsx",
+  },
+}

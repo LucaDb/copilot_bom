@@ -1,0 +1,81 @@
+{
+  "name": "copilot_bom",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "src/bowl/**",
+    "src/mixer/packages/*",
+    "src/mixer/storybook",
+    "src/mixer/theme",
+    "src/mixer/web",
+    "src/packages/**"
+  ],
+  "scripts": {
+    "dev": "bom dev:web",
+    "test": "bom test:web",
+    "prune": "bom prune:web",
+    "build": "bom build:web",
+    "analyze": "bom analyze:web",
+    "serve": "bom serve:web",
+    "c:1": "---------------",
+    "dev:bowl": "bom dev:bowl",
+    "test:bowl": "bom test:bowl",
+    "prune:bowl": "bom prune:bowl",
+    "build:bowl": "bom build:bowl",
+    "serve:bowl": "bom serve:bowl",
+    "c:2": "---------------",
+    "dev:web": "bom dev:web",
+    "test:web": "bom test:web",
+    "prune:web": "bom prune:web",
+    "build:web": "bom build:web",
+    "serve:web": "bom serve:web",
+    "c:3": "---------------",
+    "bowl": "bom dev:bowl",
+    "oven": "dotnet watch run -lp dev",
+    "mixer": "bom dev:web",
+    "theme": "bom dev:theme",
+    "storybook": "bom dev:storybook",
+    "c:4": "---------------",
+    "reinstall:clean": "rimraf \"**/node_modules/**\" \"**/dist/**\" \"**/\\.next/**\" \"**/\\.turbo/**\" \"package-lock.json\"",
+    "reinstall:install": "npm install",
+    "reinstall": "run-s reinstall:*",
+    "c:5": "---------------",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "start": "turbo run start --filter=@copilot_bom/web",
+    "test-watch": "turbo run test-watch --no-daemon",
+    "test-e2e": "turbo run test-e2e --concurrency=1 --no-daemon",
+    "coverage": "turbo run coverage --no-daemon"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.29.8",
+    "@swc/jest": "^0.2.36",
+    "@types/jest": "^29.5.12",
+    "@websolutespa/bom-cli": "latest",
+    "@websolutespa/bom-env": "latest",
+    "eslint": "^8.56.0",
+    "eslint-config-websolute": "*",
+    "prettier": "^3.2.5",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "3.0.2",
+    "ts-node": "^10.9.2",
+    "turbo": "latest"
+  },
+  "overrides": {
+    "graphql@>15.7.0 <16.7.0": "^15.8.0"
+  },
+  "bundledDependencies": [
+    "packages/test"
+  ],
+  "engines": {
+    "npm": ">=10.5.0",
+    "node": ">=20.12.1 <=21.x.x"
+  },
+  "packageManager": "npm@10.5.0",
+  "type": "module"
+}

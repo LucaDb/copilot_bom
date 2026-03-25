@@ -1,0 +1,9 @@
+.next
+.swc
+.storybook-dist
+.build
+.dist
+dist
+build
+public/*
+!public/.gitkeep

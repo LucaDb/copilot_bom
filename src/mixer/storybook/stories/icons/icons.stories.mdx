@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { IconWebhook } from '@copilot_bom/icons';
+import { Icons } from '@copilot_bom/ui';
+
+<Meta
+  title="Icons"
+  component={IconWebhook}
+  argTypes={{ }}
+  parameters={{
+    backgrounds: { disable: true, grid: { disable: true } },
+    docs: {
+      page: null,
+    },
+  }}
+/>
+
+# Icons
+
+Used to trigger an operation.
+
+[View source](https://github.com/{username}/{repo}/tree/main/src/mixer/packages/ui/src/icons/icons)
+
+## Imports
+
+```js
+import { IconWebhook } from '@copilot_bom/icons';
+```
+
+## Icons List
+
+The list of `Icons` available.
+
+<Canvas>
+  <Story name="Icons" parameters={{
+    docs: {
+      source: {
+        code: `import { IconWebhook } from '@copilot_bom/icons';
+        <IconWebhook />
+        `,
+        language: 'tsx',
+        type: 'auto',
+      }
+    },
+  }}>
+    <Icons />
+  </Story>
+</Canvas>

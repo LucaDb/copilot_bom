@@ -1,0 +1,46 @@
+{
+  "profiles": {
+    "local": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "oven/dashboard",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local",
+        "ASPNETCORE_URLS": "http://*:5000"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5000"
+    },
+    "dev": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "oven/dashboard",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://*:5000"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5000"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "launchBrowser": true,
+      "launchUrl": "oven/dashboard",
+      "environmentVariables": {
+        "COMPUTERNAME": "WSL2",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://*:5000"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://0.0.0.0:5000",
+      "distributionName": ""
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/oven/dashboard",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  }
+}

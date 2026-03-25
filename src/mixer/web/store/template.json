@@ -1,0 +1,30 @@
+[
+  {
+    "id": "homepage",
+    "name": "Homepage",
+    "collections": [
+      "homepage"
+    ]
+  },
+  {
+    "id": "post_index",
+    "name": "PostIndex",
+    "collections": [
+      "post_index"
+    ]
+  },
+  {
+    "id": "post_index_infinite",
+    "name": "PostIndexInfinite",
+    "collections": [
+      "post_index"
+    ]
+  },
+  {
+    "id": "post_detail",
+    "name": "PostDetail",
+    "collections": [
+      "post_detail"
+    ]
+  }
+]

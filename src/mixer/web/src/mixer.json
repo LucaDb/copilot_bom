@@ -1,0 +1,9 @@
+{
+  "collections": [],
+  "mocks": [],
+  "pages": [
+    "homepage",
+    "post_index",
+    "post_detail"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/websolutespa/bom/main/oven/src/core/json-schema.json",
+  "appConfig": {
+    "basePath": "/oven",
+    "dashboard": {
+      "basicAuth": {
+        "credential": {
+          "userName": "",
+          "password": ""
+        }
+      },
+      "menuItems": [
+        {
+          "title": "CheckIubenda",
+          "icon": "card-checklist",
+          "url": "https://checkiubenda.websolute.it/consent/search/X8MqOlNZq9UisQGBhED00Ti9FiaHp59B"
+        },
+        {
+          "title": "P2M",
+          "icon": "heart-pulse",
+          "url": "https://app.pm2.io/bucket/64549e62b50e13c22b7b3a57/backend/overview/servers"
+        },
+        {
+          "title": "Docs",
+          "icon": "github",
+          "url": "https://github.com/websolutespa/bom"
+        }
+      ]
+    },
+    "gateway": {
+      "someservice": {
+        "host": "http://localhost:4100"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { Header } from '@copilot_bom/ui';
+
+<Meta
+  title="Sections / Header"
+  component={Header}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Header
+
+A component to display a `Header`.
+
+[View source](https://github.com/{username}/{repo}/tree/main/src/mixer/packages/ui/src/sections/header)
+
+## Imports
+
+```js
+import { Header } from '@copilot_bom/ui';
+```
+
+## Example
+
+A basic example of `Header`.
+
+<Canvas>
+  <Story name="default">
+    <div style={{ backgroundColor: 'var(--color-neutral-900)' }}>
+      <Header />
+    </div>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="sticky">
+    <Header sticky />
+  </Story>
+</Canvas>

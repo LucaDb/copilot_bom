@@ -1,0 +1,79 @@
+[
+  {
+    "id": "homepage",
+    "title": "Home",
+    "slug": ""
+  },
+  {
+    "id": "parent-category",
+    "title": {
+      "en": "Parent Category",
+      "it": "Categoria Padre"
+    },
+    "category": "homepage"
+  },
+  {
+    "id": "sub-category",
+    "title": {
+      "en": "Sub Category",
+      "it": "Sotto Categoria"
+    },
+    "category": "parent-category",
+    "isHidden": true
+  },
+  {
+    "id": "other-category",
+    "title": {
+      "en": "Other Category",
+      "it": "Altra Categoria"
+    },
+    "category": "homepage"
+  },
+  {
+    "id": "hidden-category",
+    "title": {
+      "en": "Hidden Category",
+      "it": "Categoria Nascosta"
+    },
+    "category": "homepage",
+    "isHidden": true
+  },
+  {
+    "id": "child-of-hidden-category",
+    "title": {
+      "en": "Child of Hidden Category",
+      "it": "Figlio di Categoria Nascosta"
+    },
+    "category": "hidden-category"
+  },
+  {
+    "id": "hidden-child-of-hidden-category",
+    "title": {
+      "en": "Hidden Child of Hidden Category",
+      "it": "Figlio Nascosto di Categoria Nascosta"
+    },
+    "isHidden": true,
+    "category": "child-of-hidden-category"
+  },
+  {
+    "id": "child-of-hidden-child-of-hidden-category",
+    "title": {
+      "en": "Child of Hidden Child of Hidden Category",
+      "it": "Figlio di Figlio Nascosto di Categoria Nascosta"
+    },
+    "category": "hidden-child-of-hidden-category"
+  },
+  {
+    "id": "test",
+    "title": {
+      "en": "Test",
+      "it": "Test"
+    },
+    "category": "homepage"
+  },
+  {
+    "id": "post_index",
+    "title": "Posts",
+    "category": "homepage"
+  }
+]
